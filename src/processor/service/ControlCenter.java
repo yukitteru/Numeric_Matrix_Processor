@@ -22,22 +22,22 @@ public class ControlCenter {
         while (decision != Decision.EXIT) {
             decision = input();
             switch (decision) {
-                case ADD:
+                case ADD -> {
                     m1 = create();
                     m2 = create();
                     print(MatrixOperations.add(m1, m2));
-                    break;
-                case SCALAR_MULTIPLY:
+                }
+                case SCALAR_MULTIPLY -> {
                     m1 = create();
                     System.out.println("Enter multiplier");
                     print(MatrixOperations.scalarMultiply(m1, USER_INPUT.nextInt()));
-                    break;
-                case MULTIPLY:
+                }
+                case MULTIPLY -> {
                     m1 = create();
                     m2 = create();
                     print(MatrixOperations.multiply(m1, m2));
-                    break;
-                case TRANSPOSE:
+                }
+                case TRANSPOSE -> {
                     System.out.println("\n1. Main diagonal\n" +
                             "2. Side diagonal\n" +
                             "3. Vertical line\n" +
@@ -46,27 +46,20 @@ public class ControlCenter {
                     int dec = USER_INPUT.nextInt();
                     m1 = create();
                     switch (dec) {
-                        case 1:
-                            print(MatrixOperations.transposeOverMainDiagonal(m1));
-                            break;
-                        case 2:
-                            print(MatrixOperations.transposeOverSideDiagonal(m1));
-                            break;
-                        case 3:
-                            print(MatrixOperations.transposeByVerticalLine(m1));
-                            break;
-                        case 4:
-                            print(MatrixOperations.transposeByHorizontalLine(m1));
-                            break;
+                        case 1 -> print(MatrixOperations.transposeOverMainDiagonal(m1));
+                        case 2 -> print(MatrixOperations.transposeOverSideDiagonal(m1));
+                        case 3 -> print(MatrixOperations.transposeByVerticalLine(m1));
+                        case 4 -> print(MatrixOperations.transposeByHorizontalLine(m1));
                     }
-                    break;
-                case DETERMINANT:
+                }
+                case DETERMINANT -> {
                     m1 = create();
                     System.out.println("The result is: \n" + MatrixOperations.determinant(m1));
-                    break;
-                case INVERSE:
+                }
+                case INVERSE -> {
                     m1 = create();
                     print(MatrixOperations.inverse(m1));
+                }
             }
             System.out.println();
         }
